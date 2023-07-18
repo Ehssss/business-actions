@@ -17,6 +17,6 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: 16.x
-      # Use run to install and test the app :D
-      - run: npm ci
-      - run: npm test
+    # Use run to install and test app :)
+    - run: npm ci
+    - run: npm test
