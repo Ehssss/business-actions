@@ -1,0 +1,22 @@
+name: Test and Deploy # The name will show under Workflows in my repo's GitHub Actions
+
+# Define when to run the action.
+on: # Defines when the workflow should be triggered.
+  push: # We want to run tests wheneber we push to the main branch so
+    branches: [ main ] # we set the push value's branches property to an array containing main.
+
+# Workflow - made of one or many jobs
+jobs:
+  test:
+    name: Test # Value given to name is visible when viewing the status of the workflow.
+    runs-on: macOS # Type of machine to run the job on. Can also be run on ubuntu-latest or Windows Server.
+
+    # List the steps we want to run for the job.
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version:16.x
+      # Use run to install and test the app :D
+      - run: npm ci
+      - run: npm test
