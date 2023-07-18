@@ -6,8 +6,13 @@ import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import { App } from './App';
 
-it('should render', () => {
-  render(<App />);
+// it('should render', () => {
+//   render(<App />);
 
-  expect(screen.getByText('Business Contacts')).toBeInTheDocument();
+//   expect(screen.getByText('Business Contacts')).toBeInTheDocument();
+// });
+
+// Failing test:
+it('should do something amazing', () => {
+  expect(true).toBe(false);
 });
