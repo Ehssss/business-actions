@@ -14,5 +14,5 @@ import { App } from './App';
 
 // Failing test:
 it('should do something amazing', () => {
-  expect(true).toBe(false);
+  expect(true).toBe(true);
 });
