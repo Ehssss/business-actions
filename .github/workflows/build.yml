@@ -12,11 +12,13 @@ jobs:
     runs-on: macos-latest # Type of machine to run the job on. Can also be run on ubuntu-latest or Windows Server.
 
     # List the steps we want to run for the job.
-    steps:
+    steps: 
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
       with:
         node-version: 16.x
+    # Can also use 3rd parties eg with Elixir
+    
     # Use run to install and test app :)
     - run: npm ci
     - run: npm test
