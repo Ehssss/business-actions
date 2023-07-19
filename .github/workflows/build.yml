@@ -9,7 +9,7 @@ on: # Defines when the workflow should be triggered.
 jobs:
   test:
     name: Test # Value given to name is visible when viewing the status of the workflow.
-    runs-on: macos-latest # Type of machine to run the job on. Can also be run on ubuntu-latest or Windows Server.
+    runs-on: ubuntu-latest # Type of machine to run the job on. Can also be run on ubuntu-latest or Windows Server.
 
     # List the steps we want to run for the job.
     steps: 
@@ -27,7 +27,7 @@ jobs:
   build:
     name: Build and Deploy
     needs: test # This tells Github Actions to only run once the 'needs' job in this workflow completes successfully.
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
 
     # Extend the 'uses' value of 'checkout'.
     steps:
@@ -48,5 +48,5 @@ jobs:
       - name: Deploy
         run: railway up
         env:
-          RAILWAY_TOKEN: ${ secrets.RAILWAY_TOKEN } # Adding the 'env' with 'RAILWAY_TOKEN' supplies this token from your repo secrets to enable your building the app via Github Actions.
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }} # Adding the 'env' with 'RAILWAY_TOKEN' supplies this token from your repo secrets to enable your building the app via Github Actions.
       
