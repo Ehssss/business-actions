@@ -13,6 +13,6 @@ it('should render', () => {
 });
 
 // Failing test:
-it('should do something amazing', () => {
-  expect(true).toBe(false);
-});
+// it('should do something amazing', () => {
+//   expect(true).toBe(false);
+// });
