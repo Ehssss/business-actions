@@ -43,10 +43,10 @@ jobs:
       - name: Install Railway
         run: npm i -g @railway/cli
 
-      # Finally deply app via the 'railway up' or 'railway run' command,
+      # Finally deploy app via the 'railway up' or 'railway run' command,
       # This will use the Dockerfile in the project root and build an image for the app.
       - name: Deploy
-        run: railway up
+        run: railway run
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }} # Adding the 'env' with 'RAILWAY_TOKEN' supplies this token from your repo secrets to enable your building the app via Github Actions.
       
