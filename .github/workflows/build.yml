@@ -18,7 +18,35 @@ jobs:
       with:
         node-version: 16.x
     # Can also use 3rd parties eg with Elixir
-    
+
     # Use run to install and test app :)
     - run: npm ci
     - run: npm test
+
+  # Build Job
+  build:
+    name: Build and Deploy
+    needs: test # This tells Github Actions to only run once the 'needs' job in this workflow completes successfully.
+    runs-on: macos-latest
+
+    # Extend the 'uses' value of 'checkout'.
+    steps:
+      - name: Checkout
+      uses: actions/checkout@v3
+
+      - name: use Node 16
+      uses: actions/ssetup-node@v3
+      with:
+        node-version: 16.x
+
+      # Install Railway CLI in Github Actions
+      - name: Install Railway
+      run: npm i -g @railway/cli
+
+      # Finally deply app via the 'railway up' or 'railway run' command,
+      # This will use the Dockerfile in the project root and build an image for the app.
+      - name: Deploy
+      run: railway up
+      env:
+        RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }} # Adding the 'env' with 'RAILWAY_TOKEN' supplies this token from your repo secrets to enable your building the app via Github Actions.
+      
