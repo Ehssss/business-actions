@@ -48,5 +48,5 @@ jobs:
       - name: Deploy
         run: railway up
         env:
-          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }} # Adding the 'env' with 'RAILWAY_TOKEN' supplies this token from your repo secrets to enable your building the app via Github Actions.
+          RAILWAY_TOKEN: ${ secrets.RAILWAY_TOKEN } # Adding the 'env' with 'RAILWAY_TOKEN' supplies this token from your repo secrets to enable your building the app via Github Actions.
       
