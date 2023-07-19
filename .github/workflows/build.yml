@@ -9,7 +9,7 @@ on: # Defines when the workflow should be triggered.
 jobs:
   test:
     name: Test # Value given to name is visible when viewing the status of the workflow.
-    runs-on: macOS # Type of machine to run the job on. Can also be run on ubuntu-latest or Windows Server.
+    runs-on: macos-latest # Type of machine to run the job on. Can also be run on ubuntu-latest or Windows Server.
 
     # List the steps we want to run for the job.
     steps:
