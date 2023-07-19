@@ -12,43 +12,43 @@ app.use(express.urlencoded({ extended: true }));
 app.get('/api/contacts', (req, res, next) => {
   res.json([
     {
-      name: 'Jane',
-      email: 'jane@example.com',
+      name: 'Ron',
+      email: 'ron@example.com',
       phone: '555-555-5555',
-      department: 'Engineering',
-      position: 'Software Engineer'
+      department: 'Coaching',
+      position: 'Coach'
     },
     {
-      name: 'John',
-      email: 'john@example.com',
+      name: 'Daquel',
+      email: 'daquel@example.com',
       phone: '555-555-5555',
       department: 'IT',
       position: 'Network Admin'
     },
     {
-      name: 'Jill',
-      email: 'jill@example.com',
+      name: 'Samie',
+      email: 'samie@example.com',
       phone: '555-555-5555',
       department: 'Marketing',
       position: 'Marketing Manager'
     },
     {
-      name: 'Jack',
-      email: 'jack@example.com',
+      name: 'Dom',
+      email: 'Dom@example.com',
       phone: '555-555-5555',
       department: 'HR',
       position: 'HR Manager'
     },
     {
-      name: 'Joe',
-      email: 'joe@example.com',
+      name: 'Aric',
+      email: 'aric@example.com',
       phone: '555-555-5555',
       department: 'Sales',
       position: 'Sales Manager'
     },
     {
-      name: 'Josephine',
-      email: 'josephine@example.com',
+      name: 'Ray',
+      email: 'ray@example.com',
       phone: '555-555-5555',
       department: 'Finance',
       position: 'Finance Manager'
